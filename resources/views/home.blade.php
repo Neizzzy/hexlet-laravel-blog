@@ -7,6 +7,7 @@
 @section('content')
     <h2>Welcome to Hexlet blog!</h2>
     <div>
-        <a href="{{ route('about') }}">About</a>
+        <a href="{{ route('about') }}">О нас</a>
+        <a href="{{ route('articles.index') }}">Статьи</a>
     </div>
 @endsection
