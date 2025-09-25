@@ -10,5 +10,5 @@ Route::get('/', [PageController::class, 'home'])
 Route::get('about', [PageController::class, 'about'])
     ->name('about');
 
-Route::get('article', [ArticleController::class, 'index'])
+Route::get('articles', [ArticleController::class, 'index'])
     ->name('articles.index');
