@@ -12,6 +12,24 @@
     <title>Hexlet Blog - @yield('title')</title>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div>
+                <a class="navbar-brand" href="{{ route('home') }}">Hexlet Blog</a>
+                <div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('about') }}">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('articles.index') }}">Статьи</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div class="container mt-4">
         <h1>@yield('header')</h1>
         <div>
