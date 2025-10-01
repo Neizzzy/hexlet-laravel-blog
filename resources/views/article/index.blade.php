@@ -6,6 +6,7 @@
 
 @section('content')
     <h2>Список статей</h2>
+    <a href="{{ route('articles.create') }}" class="text-rose-500">+ Добавить статью</a>
     @foreach($articles as $article)
         <div>
             <a href="{{ route('articles.show', $article->id) }}">
