@@ -7,16 +7,17 @@
 @section('content')
     <h2>Список статей</h2>
     <a href="{{ route('articles.create') }}" class="text-rose-500">+ Добавить статью</a>
-    @foreach($articles as $article)
-        <div>
-            <a href="{{ route('articles.show', $article->id) }}">
-                <h3>{{ $article->name }}</h3>
-            </a>
-            <div>
-                {{ Str::limit($article->body, 200) }}
+    <div class="flex flex-col gap-6 my-10">
+        @foreach($articles as $article)
+            <div class="border-2 rounded-sm border-rose-500 p-4">
+                <a href="{{ route('articles.show', $article->id) }}" class="text-xl font-bold">{{ $article->name }}</a>
+                <div>
+                    {{ Str::limit($article->body, 200) }}
+                </div>
+                <a href="{{ route('articles.edit', $article->id) }}" class="text-rose-500">Редактировать</a>
             </div>
-        </div>
-        <hr>
-    @endforeach
+        @endforeach
+    </div>
+
 @endsection
 
