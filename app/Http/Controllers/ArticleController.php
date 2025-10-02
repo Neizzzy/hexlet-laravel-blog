@@ -66,4 +66,16 @@ class ArticleController extends Controller
             ->route('articles.index')
             ->with('success', 'Статья успешно обновлена');
     }
+
+    public function destroy($id)
+    {
+        $article = Article::find($id);
+        if ($article) {
+            $article->delete();
+            session()->flash('success', 'Статья успешно удалена');
+        }
+
+        return redirect()
+            ->route('articles.index');
+    }
 }
