@@ -14,10 +14,11 @@
                 <div>
                     {{ Str::limit($article->body, 200) }}
                 </div>
-                <a href="{{ route('articles.edit', $article->id) }}" class="text-rose-500">Редактировать</a>
+                <div class="flex gap-4 pt-2">
+                    <a href="{{ route('articles.edit', $article->id) }}" class="text-rose-500">Редактировать</a>
+                    <a href="{{ route('articles.destroy', $article->id) }}" data-method="delete" data-confirm="Вы уверены?" rel="nofollow" class="text-red-700">Удалить</a>
+                </div>
             </div>
         @endforeach
     </div>
-
 @endsection
-
